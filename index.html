@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f5ef">
+  <meta name="description" content="小豆咖啡館 Little Bean Café：互動式咖啡廳經營遊戲。接單、調配飲品、補貨、定價、升級咖啡館，打造屬於你的療癒小店。">
+  <title>小豆咖啡館｜Little Bean Café</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/data.js" defer></script>
+  <script src="assets/engine.js" defer></script>
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="主選單">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"><span>☕</span></div>
+        <div><p class="brand-name">little bean<span class="brand-dot">.</span></p><p class="brand-sub">COFFEE & HAPPY DAYS</p></div>
+      </div>
+      <div class="sidebar-label">YOUR CAFÉ</div>
+      <nav class="side-nav" id="nav" aria-label="遊戲功能">
+        <button class="nav-item active" type="button" data-view="game"><span class="nav-icon">⌂</span><span>咖啡館前台</span><span class="nav-chevron">›</span></button>
+        <button class="nav-item" type="button" data-view="menu"><span class="nav-icon">▦</span><span>菜單與定價</span><span class="nav-chevron">›</span></button>
+        <button class="nav-item" type="button" data-view="stock"><span class="nav-icon">◫</span><span>進貨與庫存</span><span class="nav-chevron">›</span></button>
+        <button class="nav-item" type="button" data-view="upgrades"><span class="nav-icon">✧</span><span>店鋪升級</span><span class="nav-chevron">›</span></button>
+        <button class="nav-item" type="button" data-view="report"><span class="nav-icon">▤</span><span>營業日記</span><span class="nav-chevron">›</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-sticker" aria-hidden="true"><span>✿</span><small>small sips,<br>big happiness.</small></div>
+        <div class="sidebar-help">✦ 每杯好咖啡，都是新的故事。</div>
+        <button id="reset-btn" class="reset-btn" type="button">↻ 重新開始遊戲</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="breadcrumb"><span>我的小店</span><span class="breadcrumb-arrow">/</span><strong id="page-name">咖啡館前台</strong></div>
+        <div class="topbar-actions">
+          <span class="status-pill" id="phase-label"><span class="live-dot"></span>營業準備中</span>
+          <span class="day-pill" id="day-label">DAY 01</span>
+          <button class="help-button" id="help-btn" type="button" aria-label="開啟玩法說明" title="玩法說明">?</button>
+        </div>
+      </header>
+      <div id="view-root" aria-live="off"></div>
+      <footer class="page-footer"><span>MADE WITH ♡ & COFFEE</span><span>Little Bean Café · 單機遊玩，進度儲存在你的瀏覽器</span></footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  <dialog id="help-dialog" class="help-dialog" aria-labelledby="help-title">
+    <button class="dialog-close" id="close-help" aria-label="關閉說明" type="button">✕</button>
+    <div class="dialog-icon">☕</div>
+    <h2 id="help-title">歡迎來到小豆咖啡館！</h2>
+    <p class="muted">這是一間由你經營的迷你咖啡廳。賣咖啡、賺取收入，讓每天都有一點成長。</p>
+    <ol class="help-steps">
+      <li><strong>開始營業</strong>：在前台按下「開始營業」迎接當天的顧客。</li>
+      <li><strong>接單調配</strong>：確認顧客想喝的品項與客製需求，選擇飲品，再按 ＋／－ 調整配方。</li>
+      <li><strong>送出飲品</strong>：配方、品項與價格都會影響顧客滿意度和小費。</li>
+      <li><strong>經營小店</strong>：進貨補充食材、修改菜單價格、添購設備，最後打烊進入下一天。</li>
+    </ol>
+    <p class="help-tip">小提醒：第一次的客人會點「冰拿鐵」，選取冰拿鐵就能使用預設配方出餐。</p>
+    <button id="got-it" class="primary-button wide" type="button">好，開始經營！ →</button>
+  </dialog>
+</body>
+</html>
